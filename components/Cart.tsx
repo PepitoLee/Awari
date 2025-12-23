@@ -39,18 +39,18 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onRemove }) 
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-[#FFF8E1] z-[80] shadow-2xl flex flex-col"
+            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-gradient-to-b from-violet-500/30 via-rosa-300/20 to-peach-100/30 z-[80] shadow-2xl flex flex-col backdrop-blur-sm"
           >
-            <div className="p-6 flex items-center justify-between border-b border-wool-200">
-              <h2 className="font-display font-bold text-2xl text-wool-900">Tu Cesta</h2>
-              <button onClick={onClose} className="p-2 hover:bg-wool-200 rounded-full transition-colors">
+            <div className="p-6 flex items-center justify-between border-b border-violet-300/30">
+              <h2 className="font-display font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-rosa-200">Tu Cesta</h2>
+              <button onClick={onClose} className="p-2 hover:bg-rosa-300/30 rounded-full transition-colors">
                 <X className="w-6 h-6 text-wool-900" />
               </button>
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-4">
               {items.length === 0 ? (
-                <div className="text-center py-20 text-wool-400">
+                <div className="text-center py-20 text-wool-500">
                   <p>Tu cesta está vacía, ¡como un ovillo sin tejer!</p>
                 </div>
               ) : (
@@ -58,19 +58,19 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onRemove }) 
                   <motion.div
                     layout
                     key={item.id}
-                    className="bg-white p-4 rounded-2xl flex gap-4 shadow-sm border border-wool-100"
+                    className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl flex gap-4 shadow-sm border border-rosa-300/30"
                   >
-                    <div className="w-20 h-20 bg-wool-100 rounded-xl overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 bg-gradient-to-br from-violet-500/20 to-rosa-300/20 rounded-xl overflow-hidden flex-shrink-0">
                       <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-wool-900 font-display">{item.name}</h4>
-                      <p className="text-sm text-wool-500">Cantidad: {item.quantity}</p>
-                      <p className="font-bold text-wool-700 mt-1">S/. {(item.price * item.quantity).toFixed(2)}</p>
+                      <p className="text-sm text-wool-600">Cantidad: {item.quantity}</p>
+                      <p className="font-bold text-violet-100 mt-1">S/. {(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                     <button
                       onClick={() => onRemove(item.id)}
-                      className="text-wool-300 hover:text-red-400 transition-colors self-center"
+                      className="text-wool-400 hover:text-peach-200 transition-colors self-center"
                     >
                       <Trash2 className="w-5 h-5" />
                     </button>
@@ -79,10 +79,10 @@ export const Cart: React.FC<CartProps> = ({ isOpen, onClose, items, onRemove }) 
               )}
             </div>
 
-            <div className="p-6 bg-white border-t border-wool-200 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+            <div className="p-6 bg-white/90 backdrop-blur-sm border-t border-violet-300/30 rounded-t-3xl shadow-[0_-10px_40px_rgba(178,141,255,0.1)]">
               <div className="flex justify-between items-center mb-6">
-                <span className="text-wool-500 font-medium">Total Estimado</span>
-                <span className="font-display font-black text-3xl text-wool-900">S/. {total.toFixed(2)}</span>
+                <span className="text-wool-600 font-medium">Total Estimado</span>
+                <span className="font-display font-black text-3xl text-transparent bg-clip-text bg-gradient-to-r from-violet-100 to-rosa-200">S/. {total.toFixed(2)}</span>
               </div>
               <button
                 onClick={() => {

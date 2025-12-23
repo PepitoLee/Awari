@@ -11,16 +11,16 @@ export const Hero: React.FC = () => {
   const heroFloatingImage = "https://image.pollinations.ai/prompt/cute%20happy%20amigurumi%20sun%20character%20hugging%20a%20cloud,%20soft%20crochet%20texture,%20floating%20in%20air,%20isolated,%20magical%20sparkles,%20soft%20lighting,%203d%20render%20style?width=800&height=800&nologo=true&seed=55";
 
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-wool-50 pt-32 lg:pt-0">
-      
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-gradient-to-br from-rosa-300/30 via-violet-500/20 to-lavanda-100/40 pt-32 lg:pt-0">
+
       {/* 1. Immersive Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30 lg:opacity-40 mix-blend-multiply transition-opacity duration-1000"
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-25 lg:opacity-35 mix-blend-soft-light transition-opacity duration-1000"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
 
-      {/* 2. Soft Gradient Overlay to ensure text readability */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-wool-50/90 via-wool-50/70 to-transparent lg:bg-gradient-to-r lg:from-wool-50 lg:via-wool-50/80" />
+      {/* 2. Soft Gradient Overlay with pastel layers */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-rosa-300/40 via-violet-500/20 to-transparent lg:bg-gradient-to-r lg:from-peach-100/50 lg:via-lavanda-100/30" />
       
       {/* 3. Noise Texture for tactile feel */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -49,11 +49,11 @@ export const Hero: React.FC = () => {
           <h1 className="font-display font-black text-5xl sm:text-6xl md:text-8xl text-wool-900 mb-6 md:mb-8 leading-[0.95] tracking-tight">
             Historias <br/>
             <span className="relative inline-block">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-wool-600 to-blush-400">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-violet-100 via-rosa-200 to-lavanda-400">
                 tejidas a mano
               </span>
               {/* Decorative underline */}
-              <svg className="absolute w-full h-3 md:h-4 -bottom-1 left-0 text-blush-300 opacity-50 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute w-full h-3 md:h-4 -bottom-1 left-0 text-rosa-200 opacity-60 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
               </svg>
             </span>
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="lg:hidden w-64 h-64 mb-6 relative"
           >
-             <div className="absolute inset-0 bg-gradient-to-tr from-blush-300 to-wool-300 rounded-full mix-blend-multiply filter blur-[40px] opacity-40 animate-pulse" />
+             <div className="absolute inset-0 bg-gradient-to-tr from-rosa-200 via-violet-300 to-aqua-300 rounded-full mix-blend-multiply filter blur-[40px] opacity-50 animate-pulse" />
              <img 
                 src={heroFloatingImage} 
                 alt="Amigurumi Mobile" 
@@ -79,20 +79,20 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 30px -10px rgba(209, 166, 99, 0.4)" }}
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 30px -10px rgba(178, 141, 255, 0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-wool-900 text-white font-bold py-4 px-8 md:py-5 md:px-10 rounded-full shadow-xl transition-all text-base md:text-lg flex items-center justify-center gap-3 group w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-100 to-rosa-200 text-wool-900 font-bold py-4 px-8 md:py-5 md:px-10 rounded-full shadow-xl transition-all text-base md:text-lg flex items-center justify-center gap-3 group w-full sm:w-auto"
               onClick={() => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explorar Amigos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
-            <motion.button 
-               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.8)" }}
+            <motion.button
+               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.9)" }}
                whileTap={{ scale: 0.95 }}
-               className="bg-white/50 backdrop-blur-sm text-wool-800 font-bold py-4 px-8 md:py-5 md:px-10 rounded-full shadow-lg border border-white transition-all text-base md:text-lg w-full sm:w-auto"
+               className="bg-white/60 backdrop-blur-sm text-wool-800 font-bold py-4 px-8 md:py-5 md:px-10 rounded-full shadow-lg border border-rosa-300/30 transition-all text-base md:text-lg w-full sm:w-auto"
             >
               Nuestra Historia
             </motion.button>
@@ -121,7 +121,7 @@ export const Hero: React.FC = () => {
            className="relative hidden lg:block"
         >
            {/* Blob Background behind product */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-blush-300 to-wool-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-pulse" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-rosa-200 via-violet-300 to-aqua-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-50 animate-pulse" />
            
            {/* Main Floating Image */}
            <motion.div
@@ -145,8 +145,8 @@ export const Hero: React.FC = () => {
            </motion.div>
 
            {/* Decorative Elements */}
-           <motion.div 
-             className="absolute top-20 right-20 text-wool-400"
+           <motion.div
+             className="absolute top-20 right-20 text-rosa-200"
              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
              transition={{ duration: 4, repeat: Infinity }}
            >
