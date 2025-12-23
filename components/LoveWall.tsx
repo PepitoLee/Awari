@@ -31,10 +31,10 @@ const REVIEWS = [
 
 export const LoveWall: React.FC = () => {
   return (
-    <section className="py-24 bg-[#fdfbf7]">
+    <section className="py-24 bg-gradient-to-br from-peach-100/30 via-rosa-300/10 to-violet-500/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-           <h2 className="font-display font-black text-4xl md:text-5xl text-wool-900 mb-4">Muro de Amor</h2>
+           <h2 className="font-display font-black text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-rosa-200 to-violet-100 mb-4">Muro de Amor</h2>
            <p className="text-wool-600">Pequeñas historias de grandes amistades.</p>
         </div>
 
@@ -46,23 +46,23 @@ export const LoveWall: React.FC = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: i * 0.1 }}
-               className="break-inside-avoid bg-white p-4 rounded-xl shadow-lg border border-wool-100 hover:shadow-xl transition-shadow"
+               className="break-inside-avoid bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-rosa-300/30 hover:shadow-xl hover:border-violet-300/50 transition-all"
              >
-                <div className="rounded-lg overflow-hidden mb-4 bg-gray-100 min-h-[150px]">
-                   <img 
-                      src={review.img} 
-                      alt="Cliente" 
-                      className="w-full object-cover hover:scale-105 transition-transform duration-500" 
+                <div className="rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-violet-500/10 to-rosa-300/10 min-h-[150px]">
+                   <img
+                      src={review.img}
+                      alt="Cliente"
+                      className="w-full object-cover hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                    />
                 </div>
-                <div className="flex text-yellow-400 mb-2">
+                <div className="flex text-peach-500 mb-2">
                    {[...Array(5)].map((_, j) => <Star key={j} className="w-3 h-3 fill-current" />)}
                 </div>
                 <p className="text-wool-700 italic text-sm mb-4">"{review.text}"</p>
                 <div className="flex justify-between items-center text-xs">
                    <span className="font-bold text-wool-900">{review.name}</span>
-                   <span className="text-blush-400 bg-blush-50 px-2 py-1 rounded-md">{review.item}</span>
+                   <span className="text-violet-100 bg-violet-500/20 px-2 py-1 rounded-md">{review.item}</span>
                 </div>
              </motion.div>
            ))}

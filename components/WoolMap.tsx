@@ -113,29 +113,29 @@ export const WoolMap: React.FC = () => {
   `;
 
   return (
-    <section className="py-24 bg-[#fbf7ef] overflow-hidden relative">
+    <section className="py-24 bg-gradient-to-br from-aqua-100/20 via-lavanda-100/20 to-mint-200/20 overflow-hidden relative">
        {/* Thread Texture Background */}
        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply"
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 4h2v2H5V5zm4 4h2v2H9V9zm4 4h2v2h-2v-2zm4 4h2v2h-2v-2z' fill='%23835b36' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")` }} 
+           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 4h2v2H5V5zm4 4h2v2H9V9zm4 4h2v2h-2v-2zm4 4h2v2h-2v-2z' fill='%23B28DFF' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")` }}
        />
-       
+
        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-20">
-          
+
           {/* Left: Content & Story */}
           <div className="order-2 lg:order-1 flex flex-col justify-center">
-             <motion.div 
+             <motion.div
                initial={{ opacity: 0, x: -30 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                className="mb-10"
              >
-                <div className="flex items-center gap-2 text-blush-400 font-bold mb-4 uppercase tracking-widest text-xs md:text-sm">
+                <div className="flex items-center gap-2 text-violet-100 font-bold mb-4 uppercase tracking-widest text-xs md:text-sm">
                    <MapPin className="w-4 h-4" />
                    <span>Conectando corazones</span>
                 </div>
                 <h2 className="font-display font-black text-5xl md:text-6xl text-wool-900 mb-6 leading-tight">
                    Huellas de Lana <br/>
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-wool-600 to-blush-400">por el Perú</span>
+                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-100 via-rosa-200 to-aqua-500">por el Perú</span>
                 </h2>
                 <p className="text-wool-700 text-lg md:text-xl leading-relaxed max-w-md font-medium">
                    Cada pedido es un hilo invisible que nos une. Explora las historias de quienes ya abrazaron la magia de Arawi.
@@ -154,16 +154,16 @@ export const WoolMap: React.FC = () => {
                        className="absolute top-0 left-0 bg-white p-5 pb-16 shadow-2xl max-w-sm border border-gray-100 transform origin-top-left"
                     >
                        {/* Washi Tape */}
-                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-blush-300/30 backdrop-blur-sm rotate-2 shadow-sm z-10"></div>
-                       
-                       <div className="aspect-square bg-wool-50 mb-5 overflow-hidden rounded-sm filter contrast-[1.05] relative group">
+                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-rosa-300/40 backdrop-blur-sm rotate-2 shadow-sm z-10"></div>
+
+                       <div className="aspect-square bg-gradient-to-br from-violet-500/10 to-rosa-300/10 mb-5 overflow-hidden rounded-sm filter contrast-[1.05] relative group">
                           <img src={activeLocation.image} alt="Cliente Feliz" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-violet-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                        </div>
-                       
+
                        <div className="font-display font-bold text-wool-900 text-xl mb-1">{activeLocation.customer}</div>
-                       <div className="flex items-center gap-2 text-sm text-wool-500 mb-3 font-medium">
-                          <MapPin className="w-3 h-3 text-blush-400" />
+                       <div className="flex items-center gap-2 text-sm text-wool-600 mb-3 font-medium">
+                          <MapPin className="w-3 h-3 text-rosa-200" />
                           {activeLocation.name}, Perú
                        </div>
                        
@@ -183,28 +183,28 @@ export const WoolMap: React.FC = () => {
              <div className="relative w-full max-w-[500px] aspect-[2/3] select-none">
                 
                 {/* Workshop Hub (Cusco/Lima area approximation for origin) */}
-                <div className="absolute top-[65%] left-[55%] w-32 h-32 bg-yellow-100/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+                <div className="absolute top-[65%] left-[55%] w-32 h-32 bg-rosa-200/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
 
                 <svg viewBox="0 0 600 800" className="w-full h-full drop-shadow-2xl overflow-visible">
                     <defs>
                         <linearGradient id="peruGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#E6F4F1" /> {/* Selva Light */}
-                            <stop offset="50%" stopColor="#F5EBD6" /> {/* Sierra Beige */}
-                            <stop offset="100%" stopColor="#FFF8E1" /> {/* Costa Warm */}
+                            <stop offset="0%" stopColor="#C4FAF8" /> {/* Aqua */}
+                            <stop offset="50%" stopColor="#DCD3FF" /> {/* Lavanda */}
+                            <stop offset="100%" stopColor="#FBE4FF" /> {/* Violet light */}
                         </linearGradient>
                         <filter id="fabricShadow">
-                            <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#000" floodOpacity="0.15"/>
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#B28DFF" floodOpacity="0.15"/>
                         </filter>
                         <pattern id="fabricPattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                            <circle cx="1" cy="1" r="1" fill="#835b36" opacity="0.1"/>
+                            <circle cx="1" cy="1" r="1" fill="#B28DFF" opacity="0.1"/>
                         </pattern>
                     </defs>
 
                     {/* Peru Silhouette */}
-                    <motion.path 
+                    <motion.path
                         d={PERU_PATH}
-                        fill="url(#peruGradient)" 
-                        stroke="#dec086" 
+                        fill="url(#peruGradient)"
+                        stroke="#D5AAFF"
                         strokeWidth="3"
                         strokeDasharray="8 4"
                         filter="url(#fabricShadow)"
@@ -225,9 +225,9 @@ export const WoolMap: React.FC = () => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
                             x1={330} y1={620} // Origin: Cusco (Workshop)
-                            x2={activeLocation.x} 
+                            x2={activeLocation.x}
                             y2={activeLocation.y}
-                            stroke="#f87171"
+                            stroke="#FF9CEE"
                             strokeWidth="3"
                             strokeLinecap="round"
                             strokeDasharray="4 4"
@@ -236,25 +236,25 @@ export const WoolMap: React.FC = () => {
 
                     {/* Map Pins */}
                     {LOCATIONS.map((loc) => (
-                        <g 
-                            key={loc.id} 
+                        <g
+                            key={loc.id}
                             onClick={() => setActiveLocation(loc)}
                             className="cursor-pointer group"
                             transform={`translate(${loc.x}, ${loc.y})`}
                         >
                             {/* Pulse for active */}
                             {activeLocation.id === loc.id && (
-                                <circle r="20" fill="#f87171" opacity="0.2">
+                                <circle r="20" fill="#FF9CEE" opacity="0.2">
                                     <animate attributeName="r" from="10" to="30" dur="1.5s" repeatCount="indefinite" />
                                     <animate attributeName="opacity" from="0.4" to="0" dur="1.5s" repeatCount="indefinite" />
                                 </circle>
                             )}
 
                             {/* Pin Head */}
-                            <circle 
-                                r={activeLocation.id === loc.id ? 8 : 6} 
-                                fill={activeLocation.id === loc.id ? "#f87171" : "#fff"} 
-                                stroke="#835b36" 
+                            <circle
+                                r={activeLocation.id === loc.id ? 8 : 6}
+                                fill={activeLocation.id === loc.id ? "#FF9CEE" : "#fff"}
+                                stroke="#B28DFF"
                                 strokeWidth="2"
                                 className="transition-all duration-300 group-hover:scale-125"
                             />
@@ -262,17 +262,17 @@ export const WoolMap: React.FC = () => {
                             {/* Label */}
                             <foreignObject x="-60" y="15" width="120" height="40" style={{ overflow: 'visible' }}>
                                 <div className={`text-center transition-all duration-300 ${activeLocation.id === loc.id ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'}`}>
-                                    <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wool-900 shadow-sm border border-wool-100 whitespace-nowrap">
+                                    <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-wool-900 shadow-sm border border-violet-300/30 whitespace-nowrap">
                                         {loc.name}
                                     </span>
                                 </div>
                             </foreignObject>
                         </g>
                     ))}
-                    
+
                     {/* Workshop Marker (Cusco) */}
                     <g transform="translate(330, 620)">
-                         <Heart size={20} className="text-blush-400 fill-blush-400 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+                         <Heart size={20} className="text-rosa-200 fill-rosa-200 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
                     </g>
 
                 </svg>

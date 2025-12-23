@@ -30,22 +30,22 @@ export const CategoryPills: React.FC<CategoryPillsProps> = ({ selectedCategory, 
             transition={{ delay: i * 0.1 }}
             className="flex flex-col items-center gap-3 group"
           >
-            <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full p-1 border-2 border-dashed transition-all duration-300 ${isSelected ? 'border-blush-400 scale-110' : 'border-wool-300 group-hover:border-blush-300'}`}>
+            <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full p-1 border-2 border-dashed transition-all duration-300 ${isSelected ? 'border-rosa-200 scale-110' : 'border-violet-300 group-hover:border-rosa-100'}`}>
               <div className="w-full h-full rounded-full overflow-hidden relative shadow-sm">
                 <img src={cat.image} alt={cat.name} className="w-full h-full object-cover filter brightness-105" />
-                <div className={`absolute inset-0 transition-colors duration-300 ${isSelected ? 'bg-transparent' : 'bg-wool-900/20 group-hover:bg-transparent'}`} />
-                
+                <div className={`absolute inset-0 transition-colors duration-300 ${isSelected ? 'bg-transparent' : 'bg-violet-100/30 group-hover:bg-transparent'}`} />
+
                 {isSelected && (
-                  <motion.div 
+                  <motion.div
                     layoutId="active-check"
-                    className="absolute inset-0 bg-blush-400/20 flex items-center justify-center"
+                    className="absolute inset-0 bg-gradient-to-br from-rosa-200/30 to-violet-300/30 flex items-center justify-center"
                   >
                     <div className="w-2 h-2 bg-white rounded-full shadow-md" />
                   </motion.div>
                 )}
               </div>
             </div>
-            <span className={`font-display font-bold uppercase tracking-widest text-xs transition-colors ${isSelected ? 'text-blush-400' : 'text-wool-600 group-hover:text-wool-800'}`}>
+            <span className={`font-display font-bold uppercase tracking-widest text-xs transition-colors ${isSelected ? 'text-rosa-200' : 'text-wool-600 group-hover:text-violet-100'}`}>
               {cat.name}
             </span>
           </motion.button>

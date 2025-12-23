@@ -17,26 +17,81 @@
               display: ['Outfit', 'sans-serif'],
             },
             colors: {
-              wool: {
-                50: '#fdfbf7',
-                100: '#fbf7ef',
-                200: '#f5ebd6',
-                300: '#ebd8b0',
-                400: '#dec086',
-                500: '#d1a663',
-                600: '#c28c4e',
-                700: '#a2713f',
-                800: '#835b36',
-                900: '#6b4b30',
+              // Nueva paleta pastel con mezcla de capas
+              // Fila 1 - Rosas
+              rosa: {
+                100: '#FFB5E8',
+                200: '#FF9CEE',
+                300: '#FFCCF9',
+                400: '#FCC2FF',
+                500: '#F6A6FF',
               },
+              // Fila 2 - Violetas
+              violet: {
+                100: '#B28DFF',
+                200: '#C5A3FF',
+                300: '#D5AAFF',
+                400: '#ECD4FF',
+                500: '#FBE4FF',
+              },
+              // Fila 3 - Lavandas/Azules claros
+              lavanda: {
+                100: '#DCD3FF',
+                200: '#A79AFF',
+                300: '#B5B9FF',
+                400: '#97A2FF',
+                500: '#AFCBFF',
+              },
+              // Fila 4 - Aguamarinas/Celestes
+              aqua: {
+                100: '#AFF8DB',
+                200: '#C4FAF8',
+                300: '#85E3FF',
+                400: '#ACE7FF',
+                500: '#6EB5FF',
+              },
+              // Fila 5 - Verdes/Amarillos claros
+              mint: {
+                100: '#BFFCC6',
+                200: '#DBFFD6',
+                300: '#F3FFE3',
+                400: '#E7FFAC',
+                500: '#FFFFD1',
+              },
+              // Fila 6 - Melocotones/Cremas
+              peach: {
+                100: '#FFC9DE',
+                200: '#FFABAB',
+                300: '#FFBEBC',
+                400: '#FFCBC1',
+                500: '#FFF5BA',
+              },
+              // Colores neutros actualizados para armonizar
+              wool: {
+                50: '#FFFBFE',
+                100: '#FFF5FA',
+                200: '#FBE4FF',
+                300: '#ECD4FF',
+                400: '#D5AAFF',
+                500: '#B28DFF',
+                600: '#97A2FF',
+                700: '#7B6BA5',
+                800: '#5A4A7A',
+                900: '#3D2F5A',
+              },
+              // Blush actualizado con tonos rosa
               blush: {
-                300: '#fca5a5',
-                400: '#f87171',
+                100: '#FFCCF9',
+                200: '#FFB5E8',
+                300: '#FF9CEE',
+                400: '#F6A6FF',
+                500: '#E88FE8',
               }
             },
             animation: {
               'float': 'float 6s ease-in-out infinite',
               'wiggle': 'wiggle 3s ease-in-out infinite',
+              'gradient': 'gradient 8s ease infinite',
             },
             keyframes: {
               float: {
@@ -46,6 +101,10 @@
               wiggle: {
                 '0%, 100%': { transform: 'rotate(-3deg)' },
                 '50%': { transform: 'rotate(3deg)' },
+              },
+              gradient: {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
               }
             }
           },
@@ -54,24 +113,43 @@
     </script>
     <style>
       body {
-        background-color: #fdfbf7;
-        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-        background-size: 24px 24px;
-        color: #5d4037;
+        background: linear-gradient(135deg, #FFFBFE 0%, #FFF5FA 25%, #FBE4FF 50%, #ECD4FF 75%, #DCD3FF 100%);
+        background-attachment: fixed;
+        color: #3D2F5A;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          radial-gradient(circle at 20% 80%, rgba(255, 181, 232, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(175, 203, 255, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(196, 250, 248, 0.1) 0%, transparent 40%),
+          radial-gradient(circle at 60% 60%, rgba(251, 228, 255, 0.12) 0%, transparent 45%);
+        pointer-events: none;
+        z-index: 0;
+      }
+      body > * {
+        position: relative;
+        z-index: 1;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+        background: linear-gradient(180deg, #FBE4FF, #DCD3FF);
       }
       ::-webkit-scrollbar-thumb {
-        background: #d1a663; 
+        background: linear-gradient(180deg, #FF9CEE, #B28DFF);
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #b88f50; 
+        background: linear-gradient(180deg, #F6A6FF, #97A2FF);
       }
     </style>
   <script type="importmap">
